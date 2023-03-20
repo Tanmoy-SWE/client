@@ -1,0 +1,2 @@
+I have hadded :
+"proxy" : "http://localhost:8000" so that we can make relative api request.
