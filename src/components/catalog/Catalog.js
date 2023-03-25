@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Navbar from '../Navbar';
+import SearchBooks from './SearchBooks';
 
 function Catalog() {
   const [books, setBooks] = useState([]);

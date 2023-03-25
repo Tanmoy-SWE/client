@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Catalog from './components/catalog/Catalog';
 import AddBook from './components/catalog/AddBook';
 import DeleteBook from './components/catalog/DeleteBook';
+import SearchBooks from './components/catalog/SearchBooks';
 
 function App() {
   return (
@@ -22,6 +23,9 @@ function App() {
           </Route>
           <Route path="/deleteBook">
             <DeleteBook />
+          </Route>
+          <Route path="/SearchBooks">
+            <SearchBooks/>
           </Route>
         </Switch>
       </div>
