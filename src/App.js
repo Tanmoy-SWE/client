@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Catalog from './components/catalog/Catalog';
 import AddBook from './components/catalog/AddBook';
+import DeleteBook from './components/catalog/DeleteBook';
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
           </Route>
           <Route path="/addBook">
             <AddBook />
+          </Route>
+          <Route path="/deleteBook">
+            <DeleteBook />
           </Route>
         </Switch>
       </div>
