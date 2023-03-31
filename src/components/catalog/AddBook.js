@@ -20,7 +20,7 @@ function AddBooks() {
       status
     };
 
-    axios.post('/books', book)
+    axios.post('/addBook', book)
       .then((response) => {
         console.log(response.data);
       })
