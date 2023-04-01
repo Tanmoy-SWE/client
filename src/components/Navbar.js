@@ -22,6 +22,9 @@ function Navbar() {
           <li style={{ margin: '0 1rem' }}>
             <Link to="/searchBooks" style={{ color: '#fff', textDecoration: 'none' }}>Search Books</Link>
           </li>
+          <li style={{ margin: '0 1rem' }}>
+            <Link to="/login" style={{ color: '#fff', textDecoration: 'none' }}>Login</Link>
+          </li>
         </ul>
       </div>
     </nav>
