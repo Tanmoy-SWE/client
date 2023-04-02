@@ -6,6 +6,7 @@ import AddBook from './components/catalog/AddBook';
 import DeleteBook from './components/catalog/DeleteBook';
 import SearchBooks from './components/catalog/SearchBooks';
 import Login from './components/authentication/login';
+import AdminHome from './components/adminPanel/adminHome';
 
 function App() {
   return (
@@ -30,6 +31,9 @@ function App() {
           </Route>
           <Route path="/login">
             <Login/>
+          </Route>
+          <Route path="/adminHome">
+            <AdminHome/>
           </Route>
         </Switch>
       </div>

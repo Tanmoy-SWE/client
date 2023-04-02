@@ -1,38 +1,35 @@
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import  Axios  from 'axios';
 import './login.css';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const history = useHistory();
+  const [loginStatus, setLoginStatus] = useState("");
 
-  const handleSubmit = async (event) => {
+  const loginUser = (event) => {
     event.preventDefault();
-    try {
-      const response = await fetch('/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ username, password })
+    console.log(username,password,"dniajn")
+    const book = {
+      username : username,
+      password : password,
+    };
+
+    Axios.post('/login', book)
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
       });
-      const data = await response.json();
-      if (response.ok) {
-        history.push('/');
-      } else {
-        setError(data.message);
-      }
-    } catch (error) {
-      setError('An error occurred while logging in');
-    }
-  };
+   };
 
   return (
     <div className="login-container">
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={loginUser}>
         <label htmlFor="username">Username</label>
         <input
           type="text"
@@ -52,6 +49,7 @@ function Login() {
         {error && <div className="error">{error}</div>}
         <button type="submit">Log in</button>
       </form>
+      <h1> {loginStatus}</h1>
     </div>
   );
 }
