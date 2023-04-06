@@ -7,6 +7,9 @@ import DeleteBook from './components/catalog/DeleteBook';
 import SearchBooks from './components/catalog/SearchBooks';
 import Login from './components/authentication/login';
 import AdminHome from './components/adminPanel/adminHome';
+import Addusers from './components/authentication/addUser';
+import AddUsers from './components/authentication/addUser';
+import Users from './components/adminPanel/allUsers';
 
 function App() {
   return (
@@ -34,6 +37,12 @@ function App() {
           </Route>
           <Route path="/adminHome">
             <AdminHome/>
+          </Route>
+          <Route path="/addUser">
+            <AddUsers/>
+          </Route>
+          <Route path="/allUsers">
+          <Users/>
           </Route>
         </Switch>
       </div>

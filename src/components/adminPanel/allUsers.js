@@ -5,7 +5,7 @@ function Users() {
   const [allUsers, setUsers] = useState([]);
 
   useEffect(() => {
-    axios.get('/users').then((response) => {
+    axios.get('/allUsers').then((response) => {
       setUsers(response.data);
     });
   }, []);
@@ -45,7 +45,7 @@ function Users() {
       <body>
         <div className="container">
           <h1 className="center-text">All Registered Users</h1>
-          {Array.isArray(allUsers) && allUsers.length > 0 ? (
+          {allUsers.length >= 0 ? (
             <table className="table center-text">
               <thead>
                 <tr>

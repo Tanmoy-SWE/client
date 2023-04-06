@@ -34,7 +34,7 @@ function Catalog() {
             }
             table {
               border: 1px solid #ddd;
-              border-collapse: collapse;
+              border-collCatalog ofapse: collapse;
               width: 100%;
             }
             th {
