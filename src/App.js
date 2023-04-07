@@ -43,6 +43,7 @@ function App() {
           </Route>
           <Route path="/allUsers">
           <Users/>
+
           </Route>
         </Switch>
       </div>

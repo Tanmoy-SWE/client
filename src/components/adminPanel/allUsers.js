@@ -1,7 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+
 function Users() {
+
+    function deleteUser(userId) {
+        axios
+          .delete(`/users/deleteUser/${userId}`)
+          .then((response) => {
+            // If the user was successfully deleted, remove them from the state
+            setUsers(allUsers.filter((user) => user.id !== userId));
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
   const [allUsers, setUsers] = useState([]);
 
   useEffect(() => {
@@ -37,7 +50,9 @@ function Users() {
             }
             th {
               background-color: #f2f2f2;
-            }
+            }          <Route path="/users/deleteBook">
+            <DeleteUser />
+          </Route>
           `}
         </style>
         <title>All Users</title>
@@ -52,17 +67,22 @@ function Users() {
                   <th>ID</th>
                   <th>Name</th>
                   <th>User Type</th>
+                  <th>Delete User</th>
                 </tr>
               </thead>
               <tbody>
                 {allUsers.map((user) => (
-                  <tr key={user.id}>
+                    <tr key={user.id}>
                     <td>{user.id}</td>
                     <td>{user.name}</td>
                     <td>{user.type}</td>
-                  </tr>
+                    <td>
+                        <button onClick={() => deleteUser(user.id)}>Delete</button>
+                    </td>
+                    </tr>
                 ))}
-              </tbody>
+                </tbody>
+
             </table>
           ) : (
             <p>Loading users...</p>
